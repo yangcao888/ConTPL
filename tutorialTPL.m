@@ -9,9 +9,9 @@ clc
 % specify the parameters
 TM=[0.8,0.2; 0,1]; % moderate temporal corr.
 e=0.1; % means epsilon at each t (note: it can be different at each t)
-PL=0;  % means the INITIAL (backward) privacy leakage or the LAST (forward) privacy leakage
+PL=0;  % means the privacy leakage at t=1 (for BPL) or the privacy leakage at t=T (for FPL); T means the last/current time point
 
-% function `preCompQDMatrix` needs some functions in tools folder
+% function `preCompQDMatrix` needs some code in tools folder
 addpath('tools/');
 
 % frist run the following line to get pre-computed results `EspMatrix`, `qM`, `dM`  
@@ -36,11 +36,11 @@ PL = calcPL(PL, e, EspMatrix, qM, dM) % t=10
 % BPL at t = calcPL(BPL at t-1, e at t, EspMatrix, qM, dM)
 % if t=1, BPL=0;
 % FPL at t = calcPL(FPL at t+1, e at t, EspMatrix, qM, dM)
-% if t=the current/the last (you haven't release the next data), FPL=0.
+% if t=the current/last (you haven't release the next data), FPL=0.
 
 % what is TPL?
 % TPL_t = BPL_t + FPL_t - e_t 
-
-% you can try to think: how to draw line(ii) in Fig3(c) in ICDE17 paper?
+% note: when t=2, BPL_1 keeps the same, but FPL_1 is changing (larger or the same). 
+% you can try to think: how to draw line(ii), i.e. TPL, in Fig3(c) in ICDE17 paper?
 
 % Good luck!
