@@ -1,9 +1,9 @@
 
 %=========================================
-% generate a TM with a specified level of temproal correlation
+% generate a TM with a specified strength of temproal correlation
 % 13-Aug-2018 author: Yang Cao 
 %-----------------inputs-----------------
-% s: s>=0, a smaller s indicates stronger temporal correlations 
+% s: s>=0, SMALLER s indicates STRONGER temporal correlations
 % n: the dimension of generated matrix
 %-----------------outputs-----------------
 % TM: generated TM
