@@ -4,7 +4,7 @@ ConTPL: Controlling Temporal Privacy Leakage in Differentially Private Continuou
 http://www.vldb.org/pvldb/vol11/p2090-cao.pdf
 
 
-# Useage
+# Usage
 
 Run `conTPL.mlapp` using Matlab
 (developed using Matla2018a)
