@@ -5,7 +5,7 @@
 % 2018/08/13 author: Yang Cao 
 %---------------- How to use this function--------
 
-%  addpath('func/');
+%  addpath('tools/');
 %  [EspMatrix, qM, dM, ~]= preCompQDMatrix(TM);
 % then, feed `EspMatrix`, `qM`, `dM`  into function calcPL
 %-----------------inputs-----------------
@@ -18,8 +18,7 @@
 
 function [newPL]=calcPL(PL, e, EspMatrix, qM, dM)
 
-
-
+addpath('tools/');
 % calc by precomputation
 [incrementalPL, ~, ~] = calcPLbyPreComp(PL, EspMatrix, qM, dM);
 newPL = incrementalPL+ e;
