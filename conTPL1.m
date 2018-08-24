@@ -2,6 +2,7 @@
 % Method 1 for calculating appropriate privacy budgets (eps) to against a
 % given level of TPL.
 % This method needs to know T in advance.
+% This function runs before starting to release data; the goal is to control TPL at t<=T.
 % 2018/08/24 author: Yang Cao
 %-----------------inputs-----------------
 % TM_B: backward transition matrix
