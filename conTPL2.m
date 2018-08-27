@@ -10,10 +10,11 @@
 % tpl_goal: a desired level of TPL
 %-----------------outputs------------------------
 % eps: the epsilon you should use at every t.
+% errCode: if 0, ok; if 1 means the result is not usable.
 %================================================
-function  [eps]=conTPL2(TM_B, TM_F, tpl_goal)
+function  [eps, errCode]=conTPL2(TM_B, TM_F, tpl_goal)
 
 addpath('tools/');
-eps = allocEspByUpperBound(tpl_goal, TM_B, TM_F);
+[eps, errCode] = allocEspByUpperBound(tpl_goal, TM_B, TM_F);
 
 end

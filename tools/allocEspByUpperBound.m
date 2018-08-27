@@ -7,22 +7,29 @@
 % TM_F: forward transition matrix
 %-----------------outputs-----------------
 % e: allocated privacy budget at every time points
+% errCode: if 0, ok; if 1 means the result is not usable.
 %=========================================
 
 
-function [e]=allocEspByUpperBound(a, TM_B, TM_F)
+function [e, errCode]=allocEspByUpperBound(a, TM_B, TM_F)
 
 [~,qM_B, dM_B, QDplusInd_B]= preCompQDMatrix(TM_B);
 [~, qM_F, dM_F, QDplusInd_F]= preCompQDMatrix(TM_F);
 
-% updateTime=0;
+errCode =0;
+updateTime=0;
 % find a_B
 bingo = false;
 range=a;
 e=0.5*a;
 while ~bingo
-%     updateTime=updateTime+1;
+    updateTime=updateTime+1;
     range=range*0.5;
+    
+    if range == 0 || e<0
+        errCode = 1;
+        break;
+    end
     
     [sup_B,~, ~]=findSup(TM_B, e, qM_B, dM_B, QDplusInd_B);
     [sup_F,~, ~]=findSup(TM_F, e, qM_F, dM_F, QDplusInd_F);
