@@ -3,6 +3,8 @@
 ConTPL: Controlling Temporal Privacy Leakage in Differentially Private Continuous Data Release, in VLDB2018 Demo Track.
 http://www.vldb.org/pvldb/vol11/p2090-cao.pdf
 
+Licensed under Apache License, Version 2.0.
+
 
 # Usage
 
